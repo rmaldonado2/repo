@@ -1,0 +1,261 @@
+login as: netadmin
+netadmin@172.21.12.85's password:
+Welcome to Ubuntu 22.04 LTS (GNU/Linux 5.15.0-25-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+This system has been minimized by removing packages and content that are
+not required on a system that users do not log into.
+
+To restore this content, you can run the 'unminimize' command.
+Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your                                                                                                                                                              Internet connection or proxy settings
+
+Last login: Wed Nov 22 15:14:57 2023 from 172.21.12.169
+netadmin@netadmin:~$ sudi -i
+-bash: sudi: command not found
+netadmin@netadmin:~$ netadmin
+-bash: netadmin: command not found
+netadmin@netadmin:~$ sudo -i
+[sudo] password for netadmin:
+root@netadmin:~# touch /etc/prueba.txt
+root@netadmin:~# ls /etc/pru*
+/etc/prueba.txt
+root@netadmin:~# ls -l /usr/bin/whatis
+ls: cannot access '/usr/bin/whatis': No such file or directory
+root@netadmin:~# touch /usr/bin/whatis
+root@netadmin:~# ls -l /usr/bin/whatis
+-rw-r--r-- 1 root root 0 Nov 22 18:33 /usr/bin/whatis
+root@netadmin:~# whoami
+root
+root@netadmin:~# exit
+logout
+netadmin@netadmin:~$ groups
+netadmin adm cdrom sudo dip plugdev lxd
+netadmin@netadmin:~$ sudo groupadd oficina_malaga
+netadmin@netadmin:~$ sudo groupadd oficina_jaen
+netadmin@netadmin:~$ sudo groupadd oficina_madrit
+netadmin@netadmin:~$ sudo groumod -n oficina_madrid oficina_madrit
+sudo: groumod: command not found
+netadmin@netadmin:~$ sudo groumod -n oficina_madrit oficina_madrid
+sudo: groumod: command not found
+netadmin@netadmin:~$ sudo groupmod -n oficina_madrid oficina_madrit
+netadmin@netadmin:~$
+netadmin@netadmin:~$ sudo groumod -n oficina_madrid oficina_madrit
+
+netadmin@netadmin:~$ sudo groumod -n oficina_madrid oficina_madrit
+-bash: netadmin@netadmin:~$: command not found
+-bash: netadmin@netadmin:~$: command not found
+netadmin@netadmin:~$ adduser pedro --ingroup ofina_malaga
+adduser: Only root may add a user or group to the system.
+netadmin@netadmin:~$ sudo bash
+root@netadmin:/home/netadmin# addduser pedro --ingroup ofina_malaga
+bash: addduser: command not found
+root@netadmin:/home/netadmin# adduser pedro --ingroup ofina_malaga
+adduser: The group `ofina_malaga' does not exist.
+root@netadmin:/home/netadmin# adduser pedro --ingroup oficina_malaga
+Adding user `pedro' ...
+Adding new user `pedro' (1001) with group `oficina_malaga' ...
+Creating home directory `/home/pedro' ...
+Copying files from `/etc/skel' ...
+New password:
+Retype new password:
+Sorry, passwords do not match.
+passwd: Authentication token manipulation error
+passwd: password unchanged
+Try again? [y/N] y
+New password:
+Retype new password:
+passwd: password updated successfully
+Changing the user information for pedro
+Enter the new value, or press ENTER for the default
+        Full Name []: 1
+        Room Number []: 1
+        Work Phone []: 1
+        Home Phone []: 1
+        Other []: 1
+Is the information correct? [Y/n] y
+root@netadmin:/home/netadmin#
+root@netadmin:/home/netadmin# y
+bash: y: command not found
+root@netadmin:/home/netadmin# adduser ana --ingroup oficina_malaga
+Adding user `ana' ...
+Adding new user `ana' (1002) with group `oficina_malaga' ...
+Creating home directory `/home/ana' ...
+Copying files from `/etc/skel' ...
+New password:
+Retype new password:
+passwd: password updated successfully
+Changing the user information for ana
+Enter the new value, or press ENTER for the default
+        Full Name []: 2
+        Room Number []: 2
+        Work Phone []: 2
+        Home Phone []: 2
+        Other []: 2
+Is the information correct? [Y/n] y
+root@netadmin:/home/netadmin# adduser berta --ingroup oficina_madrid
+Adding user `berta' ...
+Adding new user `berta' (1003) with group `oficina_madrid' ...
+Creating home directory `/home/berta' ...
+Copying files from `/etc/skel' ...
+New password:
+Retype new password:
+passwd: password updated successfully
+Changing the user information for berta
+Enter the new value, or press ENTER for the default
+        Full Name []: berta
+        Room Number []: 3
+        Work Phone []: 3
+        Home Phone []: 3
+        Other []: 3
+Is the information correct? [Y/n] y
+root@netadmin:/home/netadmin# adduser laura --ingroup oficina_malaga
+Adding user `laura' ...
+Adding new user `laura' (1004) with group `oficina_malaga' ...
+Creating home directory `/home/laura' ...
+Copying files from `/etc/skel' ...
+New password:
+Retype new password:
+passwd: password updated successfully
+Changing the user information for laura
+Enter the new value, or press ENTER for the default
+        Full Name []: laura
+        Room Number []: 4
+        Work Phone []: 4
+        Home Phone []: 4
+        Other []: 4
+Is the information correct? [Y/n] y
+root@netadmin:/home/netadmin# adduser laura oficina_madrid
+Adding user `laura' to group `oficina_madrid' ...
+Adding user laura to group oficina_madrid
+Done.
+root@netadmin:/home/netadmin# ls /home
+ana  berta  laura  lost+found  netadmin  pedro
+root@netadmin:/home/netadmin# su pedro
+pedro@netadmin:/home/netadmin$ su pedro
+Password:
+pedro@netadmin:/home/netadmin$ pwd
+/home/netadmin
+pedro@netadmin:/home/netadmin$ exit
+exit
+pedro@netadmin:/home/netadmin$ cd ..
+pedro@netadmin:/home$ cd ..
+pedro@netadmin:/$ exit
+exit
+root@netadmin:/home/netadmin# mv informe.txt /home/laura/
+mv: cannot stat 'informe.txt': No such file or directory
+root@netadmin:/home/netadmin# cd /home/pedro/
+root@netadmin:/home/pedro# touch informe.txt
+root@netadmin:/home/pedro# ls -l
+total 0
+-rw-r--r-- 1 root root 0 Nov 22 19:08 informe.txt
+root@netadmin:/home/pedro# cd ..
+root@netadmin:/home# cd /home/pedro/
+root@netadmin:/home/pedro# ls -l
+total 0
+-rw-r--r-- 1 root root 0 Nov 22 19:08 informe.txt
+root@netadmin:/home/pedro# mv informe.txt /home/laura/
+root@netadmin:/home/pedro# cd ..
+root@netadmin:/home# cd laura
+root@netadmin:/home/laura# ls -l
+total 0
+-rw-r--r-- 1 root root 0 Nov 22 19:08 informe.txt
+root@netadmin:/home/laura# cd ..
+root@netadmin:/home# cd pedro
+root@netadmin:/home/pedro# ls -l
+total 0
+root@netadmin:/home/pedro# su pedro
+pedro@netadmin:~$ ls -l
+total 0
+pedro@netadmin:~$ touch hola_mundo.rb
+pedro@netadmin:~$ ls /home/
+ana  berta  laura  lost+found  netadmin  pedro
+pedro@netadmin:~$ ls
+hola_mundo.rb
+pedro@netadmin:~$ chmod +x hola_mundo.rb
+pedro@netadmin:~$ ls -l
+total 0
+-rwxr-xr-x 1 pedro oficina_malaga 0 Nov 22 19:22 hola_mundo.rb
+pedro@netadmin:~$ chmod o-x hola_mundo.rb
+pedro@netadmin:~$ chmod g+x hola_mundo.rb
+pedro@netadmin:~$ ls -l
+total 0
+-rwxr-xr-- 1 pedro oficina_malaga 0 Nov 22 19:22 hola_mundo.rb
+pedro@netadmin:~$ chmod 755 hola_mundo.rb
+pedro@netadmin:~$ ls -l
+total 0
+-rwxr-xr-x 1 pedro oficina_malaga 0 Nov 22 19:22 hola_mundo.rb
+pedro@netadmin:~$ chmod u+rwx hola_mundo.rb
+pedro@netadmin:~$ chmod g+rx-w hola__mundo.rb
+chmod: cannot access 'hola__mundo.rb': No such file or directory
+pedro@netadmin:~$ chmod o+rx-w hola_mundo.rb
+pedro@netadmin:~$ chmod g+rx-w hola_mundo.rb
+pedro@netadmin:~$ ls -l
+total 0
+-rwxr-xr-x 1 pedro oficina_malaga 0 Nov 22 19:22 hola_mundo.rb
+pedro@netadmin:~$ ^C
+pedro@netadmin:~$ ls -llogin as: netadmin
+netadmin@172.21.12.85's password:
+Welcome to Ubuntu 22.04 LTS (GNU/Linux 5.15.0-25-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+This system has been minimized by removing packages and content that are
+not required on a system that users do not log into.
+
+To restore this content, you can run the 'unminimize' command.
+Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your                                                                                                                                                              Internet connection or proxy settings
+
+Last login: Wed Nov 22 15:14:57 2023 from 172.21.12.169
+netadmin@netadmin:~$ sudi -i
+-bash: sudi: command not found
+netadmin@netadmin:~$ netadmin
+-bash: netadmin: command not found
+netadmin@netadmin:~$ sudo -i
+[sudo] password for netadmin:
+root@netadmin:~# touch /etc/prueba.txt
+root@netadmin:~# ls /etc/pru*
+/etc/prueba.txt
+root@netadmin:~# ls -l /usr/bin/whatis
+ls: cannot access '/usr/bin/whatis': No such file or directory
+root@netadmin:~# touch /usr/bin/whatis
+root@netadmin:~# ls -l /usr/bin/whatis
+-rw-r--r-- 1 root root 0 Nov 22 18:33 /usr/bin/whatis
+root@netadmin:~# whoami
+root
+root@netadmin:~# exit
+logout
+netadmin@netadmin:~$ groups
+netadmin adm cdrom sudo dip plugdev lxd
+netadmin@netadmin:~$ sudo groupadd oficina_malaga
+netadmin@netadmin:~$ sudo groupadd oficina_jaen
+netadmin@netadmin:~$ sudo groupadd oficina_madrit
+netadmin@netadmin:~$ sudo groumod -n oficina_madrid oficina_madrit
+sudo: groumod: command not found
+netadmin@netadmin:~$ sudo groumod -n oficina_madrit oficina_madrid
+sudo: groumod: command not found
+netadmin@netadmin:~$ sudo groupmod -n oficina_madrid oficina_madrit
+netadmin@netadmin:~$
+netadmin@netadmin:~$ sudo groumod -n oficina_madrid oficina_madrit
+
+netadmin@netadmin:~$ sudo groumod -n oficina_madrid oficina_madrit
+-bash: netadmin@netadmin:~$: command not found
+-bash: netadmin@netadmin:~$: command not found
+netadmin@netadmin:~$ adduser pedro --ingroup ofina_malaga
+adduser: Only root may add a user or group to the system.
+netadmin@netadmin:~$ sudo bash
+root@netadmin:/home/netadmin# addduser pedro --ingroup ofina_malaga
+bash: addduser: command not found
+root@netadmin:/home/netadmin# adduser pedro --ingroup ofina_malaga
+adduser: The group `ofina_malaga' does not exist.
+root@netadmin:/home/netadmin# adduser pedro --ingroup oficina_malaga
+Adding user `pedro' ...
+Adding new user `pedro' (1001) with group `oficina_malaga' ...
+Creating home directory `/home/pedro' ...
+Copying files from `/etc/skel' ...
+New password:
+pedro@netadmin:~$ ls -lina_malaga 0 Nov 22 19:22 hola_mundo.rbrylaga
